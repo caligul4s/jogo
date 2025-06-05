@@ -1,0 +1,588 @@
+/* style.css */
+
+/* Variáveis de Cores: Minecraft Inspired */
+:root {
+    /* Minecraft Inspired Palette */
+    --mc-grass-green: #78B04A;     /* Verde grama */
+    --mc-dark-green: #3A7D1A;      /* Verde escuro (folhas, acentos) */
+    --mc-water-blue: #4C90F0;      /* Azul água */
+    --mc-sky-blue: #87CEEB;        /* Azul céu (fundos claros, highlights) */
+    --mc-dirt-brown: #906B4F;      /* Marrom terra (fundos escuros, bordas) */
+    --mc-wood-brown: #A6815F;      /* Marrom madeira (elementos UI, abas inativas) */
+    --mc-plank-beige: #C7A683;     /* Bege tábuas (hover, caixas de conteúdo) */
+    --mc-stone-gray: #888888;      /* Cinza pedra (texto, elementos secundários) */
+    --mc-cobblestone-gray: #9E9E9E;/* Cinza pedregulho (alternativa mais clara) */
+    --mc-sand-yellow: #F5EAAA;     /* Amarelo areia (fundos principais claros) - ajustado para ser mais suave */
+    --mc-cloud-white: #FFFFFF;     /* Branco nuvem (texto sobre fundos escuros, fundos de conteúdo) */
+    --mc-obsidian-black: #333333;  /* Preto obsidiana (texto sobre fundos claros) */
+
+    /* Theme Semantic Colors */
+    --theme-primary: var(--mc-grass-green);
+    --theme-secondary: var(--mc-water-blue);
+    --theme-accent: var(--mc-wood-brown); /* Usado para acentos onde o rosa quente estava */
+
+    --text-on-primary: var(--mc-cloud-white);
+    --text-on-secondary: var(--mc-cloud-white);
+    --text-on-accent: var(--mc-cloud-white);
+    --text-default: var(--mc-obsidian-black); /* Texto padrão em fundos claros */
+    --text-inverted: var(--mc-cloud-white); /* Texto padrão em fundos escuros */
+
+    --bg-main: var(--mc-sand-yellow);
+    --bg-content-section: var(--mc-cloud-white);
+    --bg-hero: var(--mc-sky-blue); /* Fundo para a seção hero, um azul céu */
+    --bg-footer: var(--mc-dirt-brown);
+    --text-footer: var(--mc-cloud-white);
+
+    --border-standard: var(--mc-stone-gray);
+    --border-light: var(--mc-plank-beige);
+    --border-dark: var(--mc-dirt-brown);
+
+    --tab-bg-active: var(--theme-primary);
+    --tab-text-active: var(--text-on-primary);
+    --tab-bg-inactive: var(--mc-wood-brown);
+    --tab-text-inactive: var(--text-inverted);
+    --tab-border: var(--border-dark);
+    --tab-inactive-hover-bg: var(--mc-plank-beige);
+    --tab-inactive-hover-text: var(--text-default);
+
+
+    --btn-primary-bg: var(--theme-primary);
+    --btn-primary-text: var(--text-on-primary);
+    --btn-primary-hover-bg: var(--mc-dark-green);
+    --btn-primary-hover-text: var(--text-on-primary);
+
+
+    --btn-secondary-bg: var(--theme-secondary);
+    --btn-secondary-text: var(--text-on-secondary);
+    --btn-secondary-hover-bg: #3E7DD8; /* Darker blue */
+    --btn-secondary-hover-text: var(--text-on-secondary);
+    --btn-secondary-border: var(--theme-secondary);
+
+
+    --btn-subscribe-bg: var(--mc-dark-green);
+    --btn-subscribe-text: var(--mc-cloud-white);
+    --btn-subscribe-hover-bg: var(--mc-grass-green);
+
+
+    /* Fontes (mantidas para o estilo pixel/futurista) */
+    --pixel-font: 'Press Start 2P', cursive;
+    --main-font: 'Orbitron', sans-serif; /* Principal para corpo de texto mais legível */
+    --decorative-font: 'Space Mono', monospace; /* Para elementos de código, etc. */
+}
+
+/* Reset Básico e Estilos Globais */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave para âncoras */
+}
+
+body {
+    font-family: var(--main-font);
+    background-color: var(--bg-main);
+    color: var(--text-default);
+    line-height: 1.7; /* Aumentado para melhor legibilidade */
+    overflow-x: hidden; /* Evitar scroll horizontal acidental */
+}
+
+/* Overlay para dar um efeito de "scanlines" ou textura sutil se desejado */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: url('path/to/pixel-overlay.png'); */ /* Exemplo */
+    /* opacity: 0.1; */
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Container Principal */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Cabeçalhos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--pixel-font); /* Títulos com a fonte pixel */
+    margin-bottom: 0.8em;
+    color: var(--mc-dark-green); /* Um verde escuro para títulos, remetendo a natureza */
+    line-height: 1.2;
+}
+
+h1 { font-size: 3em; text-align: center; }
+h2 { font-size: 2.2em; border-bottom: 3px solid var(--mc-grass-green); padding-bottom: 0.3em; margin-top: 1.5em;}
+h3 { font-size: 1.7em; color: var(--mc-water-blue); } /* Subtítulos com azul */
+h4 { font-size: 1.3em; color: var(--mc-wood-brown); } /* Marrom para níveis menores */
+
+p {
+    margin-bottom: 1em;
+    font-family: var(--main-font); /* Fonte mais legível para parágrafos */
+}
+
+a {
+    color: var(--theme-secondary); /* Azul água para links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover, a:focus {
+    color: var(--mc-dark-green); /* Verde escuro no hover */
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px; /* Bordas levemente arredondadas para imagens */
+}
+
+/* Seção Hero */
+.hero-section {
+    background-color: var(--bg-hero); /* Azul céu para o hero */
+    color: var(--text-default); /* Texto escuro sobre fundo céu */
+    padding: 80px 0;
+    text-align: center;
+    min-height: 80vh; /* Altura maior para o hero */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-bottom: 5px solid var(--mc-dirt-brown); /* Borda "terra" */
+}
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+.game-title {
+    font-size: 4em; /* Maior */
+    color: var(--mc-dark-green); /* Verde escuro, como o nome do jogo em blocos de grama */
+    text-shadow: 2px 2px var(--mc-cloud-white), 4px 4px var(--mc-stone-gray); /* Efeito 3D sutil */
+    margin-bottom: 0.3em;
+}
+.tagline {
+    font-family: var(--decorative-font);
+    font-size: 1.4em;
+    color: var(--mc-obsidian-black); /* Texto escuro para melhor contraste com azul céu */
+    margin-bottom: 30px;
+}
+.hero-buttons {
+    display: flex;
+    gap: 25px; /* Mais espaço */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Botões */
+.btn {
+    font-family: var(--pixel-font);
+    padding: 12px 28px; /* Um pouco maiores */
+    border-radius: 6px; /* Bordas estilo "bloco" */
+    text-decoration: none;
+    transition: background-color 0.2s ease-out, transform 0.1s ease-out, box-shadow 0.2s ease-out;
+    display: inline-block;
+    cursor: pointer;
+    border: none; /* Removendo borda padrão, controlaremos com box-shadow */
+    box-shadow: 0px 4px 0px darken(var(--btn-primary-bg), 20%); /* Sombra para efeito 3D */
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 0px darken(var(--btn-primary-bg), 25%);
+}
+.btn:active {
+    transform: translateY(2px);
+    box-shadow: 0px 2px 0px darken(var(--btn-primary-bg), 20%);
+}
+
+.btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    box-shadow: 0px 4px 0px var(--mc-dark-green); /* Sombra verde escura */
+}
+.btn-primary:hover {
+    background-color: var(--btn-primary-hover-bg);
+    color: var(--btn-primary-hover-text);
+    box-shadow: 0px 6px 0px darken(var(--mc-dark-green), 5%);
+}
+.btn-primary:active {
+    box-shadow: 0px 2px 0px var(--mc-dark-green);
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    box-shadow: 0px 4px 0px darken(var(--btn-secondary-bg), 20%); /* Sombra azul escura */
+}
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-hover-bg);
+    color: var(--btn-secondary-hover-text);
+    box-shadow: 0px 6px 0px darken(var(--btn-secondary-hover-bg), 5%);
+}
+.btn-secondary:active {
+     box-shadow: 0px 2px 0px darken(var(--btn-secondary-bg), 20%);
+}
+
+
+/* Indicador de Rolagem */
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--mc-obsidian-black);
+    font-family: var(--pixel-font);
+    font-size: 0.8em;
+}
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--mc-obsidian-black); /* Cor da seta */
+    margin: 5px auto 0;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
+
+/* Seções de Conteúdo Padrão */
+main section {
+    padding: 50px 0;
+    border-bottom: 1px solid var(--border-light); /* Linha sutil entre seções */
+}
+main section:nth-child(odd) { /* Alternar cores de fundo para seções se desejar */
+    background-color: var(--mc-plank-beige); /* Um bege claro para alternar */
+}
+main section:nth-child(even) {
+    background-color: var(--bg-content-section); /* Branco para conteúdo */
+}
+main section:last-of-type {
+    border-bottom: none;
+}
+
+
+/* Estilos Específicos das Seções */
+.game-info-section .info-content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.game-info-section .info-text { flex: 2; }
+.game-info-section .info-image { flex: 1; }
+.game-screenshot {
+    border: 4px solid var(--mc-wood-brown); /* Borda de madeira */
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Mais responsivo */
+    gap: 30px;
+}
+.feature-item {
+    background-color: var(--bg-content-section); /* Fundo branco para itens */
+    padding: 25px;
+    border: 2px solid var(--mc-plank-beige); /* Borda bege */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.feature-icon {
+    width: 60px; /* Tamanho dos ícones */
+    height: 60px;
+    margin-bottom: 15px;
+    filter: grayscale(30%) opacity(0.8); /* Efeito sutil nos ícones */
+}
+
+/* Seção de Desenvolvimento - Abas */
+.development-section .development-intro {
+    font-family: var(--decorative-font);
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--mc-stone-gray);
+}
+.tabs-container {
+    background-color: var(--mc-sand-yellow); /* Fundo areia para o container das abas */
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid var(--mc-dirt-brown);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+.tab-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem linha em telas menores */
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--tab-border); /* Linha de separação */
+}
+.tab-button {
+    font-family: var(--pixel-font);
+    background-color: var(--tab-bg-inactive); /* Marrom madeira */
+    color: var(--tab-text-inactive); /* Texto branco */
+    border: none; /* Remove borda padrão */
+    border-top: 3px solid transparent;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    padding: 12px 22px;
+    margin: 0 5px 5px 0; /* Espaçamento */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.2s;
+    font-size: 0.9em;
+    border-radius: 6px 6px 0 0; /* Cantos arredondados apenas no topo */
+    position: relative;
+    bottom: -3px; /* Alinha com a borda inferior do container de botões */
+}
+.tab-button:hover {
+    background-color: var(--tab-inactive-hover-bg); /* Bege tábuas */
+    color: var(--tab-inactive-hover-text); /* Texto escuro */
+    border-color: var(--mc-plank-beige);
+}
+.tab-button.active {
+    background-color: var(--tab-bg-active); /* Verde grama */
+    color: var(--tab-text-active); /* Texto branco */
+    border-color: var(--tab-bg-active) var(--tab-bg-active) var(--bg-main); /* Truque para "conectar" com o conteúdo */
+    font-weight: bold;
+}
+.tab-content {
+    display: none; /* Escondido por padrão */
+    padding: 25px;
+    background-color: var(--bg-main); /* Fundo areia claro para o conteúdo da aba */
+    border: 2px solid var(--mc-dirt-brown);
+    border-top: none; /* A borda superior é simulada pelo botão ativo */
+    border-radius: 0 0 8px 8px;
+    animation: fadeIn 0.5s ease; /* Efeito de fade */
+}
+.tab-content.active {
+    display: block;
+}
+.development-subtitle { /* Subtítulo dentro das abas */
+    font-size: 1.5em; /* Menor que H3 normal */
+    color: var(--mc-dark-green);
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px dotted var(--mc-grass-green);
+    padding-bottom: 8px;
+}
+.tech-item ul {
+    list-style: none; /* Remove bullets padrão */
+    padding-left: 0;
+}
+.tech-item ul li {
+    padding: 5px 0 5px 25px; /* Espaço para o "bloco" */
+    position: relative;
+    font-family: var(--decorative-font);
+}
+.tech-item ul li::before { /* Adiciona um "bloco" antes de cada item da lista */
+    content: "■"; /* Quadrado, como um bloco */
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: var(--mc-grass-green); /* Cor do bloco */
+    font-size: 1.2em;
+}
+.log-entry {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--mc-stone-gray);
+}
+.log-entry:last-child { border-bottom: none; }
+.log-entry time {
+    font-family: var(--pixel-font);
+    color: var(--mc-water-blue);
+    font-size: 0.9em;
+}
+.art-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+.art-gallery figure { margin: 0; }
+.art-gallery img { border: 3px solid var(--mc-wood-brown); }
+.art-gallery figcaption {
+    font-family: var(--decorative-font);
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 5px;
+    color: var(--mc-stone-gray);
+}
+pre {
+    background-color: var(--mc-obsidian-black); /* Fundo escuro para código */
+    color: var(--mc-cloud-white);
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: var(--decorative-font); /* Fonte monoespaçada para código */
+    font-size: 0.9em;
+    border: 2px solid var(--mc-stone-gray);
+}
+code {
+    font-family: var(--decorative-font);
+}
+
+
+/* Seção Roadmap */
+.roadmap-section { background-color: var(--mc-plank-beige); }
+.roadmap-list {
+    list-style: none;
+    padding-left: 0;
+}
+.roadmap-list li {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-left: 5px solid var(--mc-stone-gray); /* "Trilha" do roadmap */
+    background-color: var(--mc-cloud-white);
+    position: relative;
+    font-family: var(--main-font);
+    border-radius: 0 5px 5px 0;
+}
+.roadmap-list li::before { /* "Nó" no roadmap */
+    content: "";
+    position: absolute;
+    left: -13px; /* Ajusta para sobrepor a borda */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: var(--mc-stone-gray);
+    border-radius: 50%;
+    border: 3px solid var(--mc-plank-beige); /* Cor de fundo da seção */
+}
+.roadmap-list li.done { border-left-color: var(--mc-grass-green); }
+.roadmap-list li.done::before { background-color: var(--mc-grass-green); }
+.roadmap-list li.current { border-left-color: var(--mc-water-blue); font-weight: bold; }
+.roadmap-list li.current::before { background-color: var(--mc-water-blue); }
+.roadmap-list li span { /* Para o texto da data/fase */
+    font-family: var(--pixel-font);
+    color: var(--mc-dark-green);
+    margin-right: 10px;
+}
+
+/* Seção Comunidade */
+.community-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+.btn-discord, .btn-forum { /* Estilos específicos para botões de comunidade */
+    background-color: var(--mc-stone-gray);
+    color: var(--mc-cloud-white);
+    box-shadow: 0px 4px 0px darken(var(--mc-stone-gray), 20%);
+}
+.btn-discord:hover, .btn-forum:hover {
+    background-color: darken(var(--mc-stone-gray), 10%);
+}
+
+/* Seção Contato e Newsletter */
+.contact-section { background-color: var(--mc-plank-beige); }
+.contact-section a { color: var(--mc-water-blue); }
+.contact-section a:hover { color: var(--mc-dark-green); }
+.social-links a {
+    margin: 0 8px;
+    font-family: var(--pixel-font);
+    font-size: 1.1em;
+}
+.newsletter {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap; /* Para responsividade */
+    gap: 10px;
+    align-items: center;
+}
+.newsletter label {
+    font-family: var(--pixel-font);
+    margin-right: 10px;
+    color: var(--mc-obsidian-black);
+}
+.newsletter input[type="email"] {
+    padding: 10px;
+    border: 2px solid var(--mc-wood-brown); /* Borda madeira */
+    border-radius: 4px;
+    font-family: var(--main-font);
+    font-size: 1em;
+    flex-grow: 1; /* Ocupa espaço disponível */
+    min-width: 200px; /* Largura mínima */
+}
+.btn-subscribe {
+    background-color: var(--btn-subscribe-bg);
+    color: var(--btn-subscribe-text);
+    padding: 10px 20px;
+    box-shadow: 0px 4px 0px darken(var(--btn-subscribe-bg), 20%);
+}
+.btn-subscribe:hover {
+    background-color: var(--btn-subscribe-hover-bg);
+}
+
+
+/* Rodapé */
+.site-footer {
+    background-color: var(--bg-footer); /* Marrom terra para o rodapé */
+    color: var(--text-footer); /* Texto branco */
+    text-align: center;
+    padding: 30px 0;
+    font-family: var(--pixel-font);
+    font-size: 0.9em;
+}
+.site-footer p { margin-bottom: 0; }
+.site-footer .container { border-top: 2px solid var(--mc-wood-brown); padding-top: 20px; }
+
+
+/* Efeitos de Transição para Seções (do script.js) - manter consistência */
+main section {
+    opacity: 0; /* Inicialmente invisível para animação */
+    transform: translateY(20px); /* Inicialmente um pouco abaixo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+/* Não precisa de :target aqui, o JS cuida da visibilidade ao rolar */
+
+
+/* Design Responsivo (ajustes para as abas e outros) */
+@media (max-width: 768px) {
+    h1, .game-title { font-size: 2.5em; } /* Ajustado para novo game-title */
+    h2 { font-size: 1.8em; }
+    .tagline { font-size: 1.1em; }
+    .hero-buttons { flex-direction: column; gap: 15px; }
+    .btn { width: 70%; margin: 0 auto; }
+    .game-info-section .info-content { flex-direction: column; }
+    .newsletter input[type="email"] { width: 100%; margin-bottom: 10px; }
+    .newsletter .btn-subscribe { width: 100%; }
+    .development-section .tech-item { text-align: center; }
+    .development-section .tech-item ul { padding-left: 0; list-style-position: inside; } /* Para que o ::before funcione bem centralizado */
+    .development-subtitle { font-size: 1.3em; } /* Ajuste para o subtítulo */
+    .tab-buttons { justify-content: center; } /* Centraliza os botões de aba */
+    .tab-button {
+        flex-grow: 1; /* Faz os botões preencherem a largura disponível se poucos */
+        margin: 5px; /* Mais espaçamento */
+        min-width: 120px; /* Largura mínima para cada botão */
+    }
+}
+
+@media (max-width: 480px) {
+    h1, .game-title { font-size: 2em; }
+    h2 { font-size: 1.6em; }
+    .btn { width: 90%; }
+    .features-grid { grid-template-columns: 1fr; } /* Uma coluna em telas bem pequenas */
+    .scroll-down-indicator { font-size: 0.7em; }
+    .arrow-down { border-left-width: 8px; border-right-width: 8px; border-top-width: 8px; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

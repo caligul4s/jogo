@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colony Frontier: O Jogo de Simulação de Colônias Pixel Art</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="game-title">Colony Frontier</h1>
+            <p class="tagline">¡Construa seu legado entre as estrelas!</p>
+            <div class="hero-buttons">
+                <a href="./src/index2.html" class="btn btn-primary"> Jogar Alpha Agora</a>
+                <a href="#about" class="btn btn-secondary">Explorar o Jogo</a>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="game-info-section">
+            <div class="container">
+                <h2>Sobre o Jogo</h2>
+                <div class="info-content">
+                    <div class="info-text">
+                        <p>"Colony Frontier" é um jogo de simulação e estratégia pixel art onde você assume o papel de um comandante encarregado de estabelecer e gerenciar uma nova colônia humana em um planeta distante e desconhecido. Enfrente desafios ambientais, gerencie recursos, pesquise novas tecnologias e expanda sua colônia de um pequeno posto avançado para uma metrópole próspera.</p>
+                        <p>Com uma estética retrô encantadora e mecânicas de jogo profundas, prepare-se para tomar decisões difíceis que moldarão o futuro de seus colonos. Cada planeta oferece biomas únicos, perigos e oportunidades.</p>
+                    </div>
+                    <div class="info-image">
+                        <img src="placeholder-game-screenshot.png" alt="Gameplay de Colony Frontier" class="game-screenshot">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2>Recursos Principais</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        
+                        <h3>Construção e Gestão</h3>
+                        <p>Projete e construa sua colônia com uma variedade de edifícios, desde moradias e fazendas até laboratórios de pesquisa avançada e defesas planetárias.</p>
+                    </div>
+                    <div class="feature-item">
+          
+                        <h3>Exploração Planetária</h3>
+                        <p>Descubra os segredos do novo mundo, encontre recursos raros, formas de vida alienígenas e anomalias misteriosas que podem ajudar ou atrapalhar sua colônia.</p>
+                    </div>
+                    <div class="feature-item">
+                        
+                        <h3>Árvore Tecnológica</h3>
+                        <p>Desbloqueie novas tecnologias para melhorar a eficiência da sua colônia, descobrir novas estruturas e aprimorar as capacidades dos seus colonos.</p>
+                    </div>
+                    <div class="feature-item">
+                        
+                        <h3>Eventos Dinâmicos</h3>
+                        <p>Lide com eventos inesperados como tempestades de meteoros, doenças, ataques de fauna local ou até mesmo dilemas morais que testarão sua liderança.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="development" class="development-section">
+            <div class="container">
+                <h2>Bastidores do Desenvolvimento</h2>
+                <p class="development-intro">Uma olhada mais de perto em como "Colony Frontier" está sendo construído.</p>
+
+                <div class="tabs-container">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="tech-stack">Tecnologias</button>
+                        <button class="tab-button" data-tab="dev-log">Diário Dev</button>
+                        <button class="tab-button" data-tab="art-design">Arte & Design</button>
+                        <button class="tab-button" data-tab="meu-codigo">Meu Código</button> {/* Nova Pestaña */}
+                    </div>
+
+                    <div class="tab-content active" id="tech-stack">
+                        <h3 class="development-subtitle">Tecnologias Utilizadas</h3>
+                        <div class="tech-item">
+                            <h4>Motor do Jogo & Gráficos:</h4>
+                            <ul>
+                                <li><strong>Phaser 3:</strong> Um framework HTML5 rápido, gratuito e divertido para jogos de desktop e mobile. Ideal para pixel art e jogos 2D.</li>
+                                <li><strong>Aseprite:</strong> Usado para criar todos os sprites e animações pixel art.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-item">
+                            <h4>Web & Ferramentas:</h4>
+                            <ul>
+                                <li><strong>HTML5, CSS3, JavaScript:</strong> A base da landing page e da demo web.</li>
+                                <li><strong>Visual Studio Code:</strong> Editor de código principal.</li>
+                                <li><strong>Tiled:</strong> Criação do mapa.</li>
+                            </ul>
+                        </div>
+                        <p>Estamos focados em usar ferramentas que permitam um desenvolvimento ágil e que se alinhem com a estética pixel art do jogo.</p>
+                    </div>
+
+                    <div class="tab-content" id="dev-log">
+                        <h3 class="development-subtitle">Diário de Desenvolvimento</h3>
+                        <article class="log-entry">
+                            <h4><time datetime="2025-05-31">31 de Maio, 2025</time> - Desenvolvimento criativo de Colonist Frontier</h4>
+                            <p>Comecei o desenvolvimento do protótipo focando na mecânica central: coleta de recurso (minério, energia), construção de estrutura básica (centro de comando, painel solar) e a interface do usuário inicial. A escolha pelo Phaser 3 já se mostra acertada pela facilidade de colocar elemento na tela e gerenciar o estado do jogo.</p>
+                        </article>
+                        <article class="log-entry">
+                            <h4><time datetime="2024-06-02">03 de Junho, 2025</time> - Adição de sistema de inventário</h4>
+                            <p>A maior parte da lógica já funcionava; agora eu só tinha que adicionar alguns ajustes, como as mecânicas de inventário, coleta e tarefas. Este jogo ainda está em etapa Alfa, então não está nem na versão Beta para ser lançado. Mesmo assim, este é um pequeno adiantamento!</p>
+                        </article>
+                        <p>Mais atualizações em breve!</p>
+                    </div>
+
+                    <div class="tab-content" id="art-design">
+                        <h3 class="development-subtitle">Conceito de Arte e Design Visual</h3>
+                        <p>A direção de arte de "Colony Frontier" busca uma estética pixel art nostálgica, mas com um toque moderno e detalhado. Me inspire em clássicos de simulação e ficção científica, visando criar um mundo que seja ao mesmo tempo charmoso e imersivo.</p>
+                        <div class="art-gallery">
+                            <figure>
+                                <img src="placeholder-concept-art-1.png" alt="Arte conceitual de um bioma">
+                               
+                            </figure>
+                            <figure>
+                                <img src="placeholder-concept-art-2.png" alt="Arte conceitual 2">
+                               
+                            </figure>
+                        </div>
+                        <p>A paleta de cores é cuidadosamente selecionada para cada bioma e estrutura, garantindo clareza visual e uma identidade forte para o jogo.</p>
+                    </div>
+
+                
+                    <div class="tab-content" id="meu-codigo">
+                        <h3 class="development-subtitle">Trechos de Código</h3>
+                        <p>Isso é uma parte do aleatorizador de colonos que criei.</p>
+                        <pre><code class="language-javascript">
+const NAMES_MALE = ["Auron", "Rok", "Dante", "Leo", "Iker"];
+const NAMES_FEMALE = ["Miry", "Lina", "Sora", "Talia", "Nira"];
+const TRAITS = ["Paciente", "Impulsivo", "Gênio", "Desajeitado", "Resistente", "Preguiçoso", "Otimista", "Sociável"];
+
+function getRandomGender() {
+  return Math.random() < 0.5 ? "male" : "female";
+}
+
+function getRandomName(gender) {
+  return gender === "male"
+    ? NAMES_MALE[Math.floor(Math.random() * NAMES_MALE.length)]
+    : NAMES_FEMALE[Math.floor(Math.random() * NAMES_FEMALE.length)];
+}
+
+export function generateColonistData() {
+  const gender = getRandomGender();
+  return {
+    name: getRandomName(gender),
+    age: 18 + Math.floor(Math.random() * 43),
+    gender: gender,
+    traits: TRAITS.sort(() => 0.5 - Math.random()).slice(0, 2),
+    skills: {
+      construction: Math.floor(Math.random() * 10) + 1,
+      gathering: Math.floor(Math.random() * 10) + 1,
+      cooking: Math.floor(Math.random() * 10) + 1
+    },
+    sprite: "colonist"
+  };
+}                </code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="roadmap-section">
+            <div class="container">
+                <h2>Objetivos e Desafios</h2>
+                <p>que desafios e objetivos eu consegui encontrar e superar no caminho?</p>
+                <ul class="roadmap-list">
+                    <li><span>Programar em Js:</span> O simples fato de tentar programar um jogo feito com JavaScript foi um completo desafio, uma vez que a maioria dos jogos é programada na linguagem C# e utiliza outro estilo de motor como Unity. Neste caso, eu utilizei o Phaser, conseguindo eliminar várias barreiras que o JS já me impunha.</li>
+                    <li><span>Desafio pessoal:</span> Entre os objetivos do projeto, eu queria buscar um desafio, algo diferente, e decidi começar a criar este jogo muito pequeno e primitivo do zero.</li>
+                
+                </ul>
+                <p>Estou empolgada para compartilhar mais progresso com vocês.</p>
+            </div>
+        </section>
+
+        <section id="community" class="community-section">
+            <div class="container">
+                <h2>Junte-se à Comunidade</h2>
+                <p>Sua opinião é importante! Participe das discussões, compartilhe suas ideias e ajude a moldar o futuro de "Colony Frontier".</p>
+                <div class="community-links">
+                    <a href="#" class="btn btn-discord">Discord (Em Breve)</a>
+                    <a href="#" class="btn btn-forum">Fórum (Em Breve)</a>
+                </div>
+                <p>Acompanhe meu <a href="#development">diário de desenvolvimento</a> para as últimas notícias.</p>
+            </div>
+        </section>
+
+        <section id="closing-words" class="closing-words-section">
+            <div class="container">
+                <h2>Uma Palavra da Desenvolvedora</h2>
+                <p>"Colony Frontier" é um projeto apaixonado, nascido do meu amor por jogos de simulação, estratégia e a beleza da pixel art. Quero criar uma experiência que seja ao mesmo tempo relaxante e desafiadora.</p>
+                <p>Obrigado pelo seu interesse e apoio!</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Mantenha-se Conectado</h2>
+                <p>Tem perguntas, sugestões ou apenas quer dizer olá? Adoraríamos ouvir de você!</p>
+                <p>Email: <a href="mailto:miranda_carreno@estudante.sesisenai.org.br">miranda_carreno@estudante.sesisenai.org.br</a></p>
+               
+                
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2025 Colony Frontier. Todos os direitos reservados. Desenvolvido com 💚 e Phaser.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
