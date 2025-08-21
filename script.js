@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mostra a primeira aba por padrão ao carregar a página
     showTab('overview');
 
 });
+
