@@ -80,7 +80,6 @@ export default class Colonist {
     } else if (this.targetTask.type === 'chop') {
       this.inventory.push('wood');
   
-      // Eliminar tile del mapa (árbol)
       if (this.targetTask.layer && this.targetTask.tileRef) {
         this.targetTask.layer.removeTileAt(
           this.targetTask.tileRef.x,
@@ -88,14 +87,12 @@ export default class Colonist {
         );
       }
   
-      // Destruir el target invisible
       if (this.targetTask.target && this.targetTask.target.destroy) {
         this.targetTask.target.destroy();
       }
   
       this.targetTask.done = true;
     } else {
-      // Tarea genérica
       this.inventory.push(this.targetTask.target.texture?.key || 'item');
       this.targetTask.target?.destroy?.();
       this.targetTask.done = true;
